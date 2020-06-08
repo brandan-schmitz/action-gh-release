@@ -87,7 +87,8 @@ describe("util", () => {
         input_prerelease: false,
         input_files: [],
         input_name: undefined,
-        input_tag_name: undefined
+        input_tag_name: undefined,
+        input_repository: undefined
       });
     });
   });

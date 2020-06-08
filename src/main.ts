@@ -7,9 +7,6 @@ import { env } from "process";
 async function run() {
   try {
     const config = parseConfig(env);
-    if (!config.input_tag_name && !isTag(config.github_ref)) {
-      throw new Error(`⚠️ GitHub Releases requires a tag`);
-    }
     GitHub.plugin([
       require("@octokit/plugin-throttling"),
       require("@octokit/plugin-retry")

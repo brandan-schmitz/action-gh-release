@@ -141,7 +141,8 @@ export const release = async (
   config: Config,
   releaser: Releaser
 ): Promise<Release> => {
-  const [owner, repo] = config.github_repository.split("/");
+  const [owner, repo] = config.input_repository?.split("/") || config.github_repository.split("/");
+  console.log(`Using ${repo} repository`);
   const tag =
     config.input_tag_name || config.github_ref.replace("refs/tags/", "");
   try {

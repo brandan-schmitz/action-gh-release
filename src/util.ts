@@ -7,6 +7,7 @@ export interface Config {
   github_repository: string;
   // user provided
   input_name?: string;
+  input_repository?: string,
   input_tag_name?: string;
   input_body?: string;
   input_body_path?: string;
@@ -42,6 +43,7 @@ export const parseConfig = (env: Env): Config => {
     github_ref: env.GITHUB_REF || "",
     github_repository: env.GITHUB_REPOSITORY || "",
     input_name: env.INPUT_NAME,
+    input_repository: env.INPUT_REPOSITORY,
     input_tag_name: env.INPUT_TAG_NAME,
     input_body: env.INPUT_BODY,
     input_body_path: env.INPUT_BODY_PATH,
